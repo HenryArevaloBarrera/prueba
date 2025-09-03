@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./templates/header')%>
+  <body>
+    <div class="container">
+      <header>
+        <!--Menu-->
+      </header>
+      <div class="card">
+        <div class="card-header">
+          <h1>Ejemplo</h1>
+        </div>
+        <div class="card-body">
+          <%if( data.length > 0){%>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <%data.forEach( computer => {%>
+                <tr>
+                  <td><%=computer.id%></td>
+                  <td><%=computer.trademark%></td>
+                  <td><%=computer.value%></td>
+                  <td><%=computer.state%></td>
+                </tr>
+              <%})%>
+            </tbody>
+          </table>
+          <%}else{%>
+          <h3>No hay Registros</h3>
+          <%}%>
+          <a href="/new-pc" class="btn btn-secondary">Nuevo Registro</a>
+        </div>
+        <div class="card-footer">Pie de página</div>
+      </div>
+      <footer><%- include('./templates/footer')%></footer>
+    </div>
+  </body>
+</html>
